@@ -1,0 +1,6 @@
+Pfizer/BioNTech
+AstraZeneca
+Janssen
+Moderna
+Sinopharm
+Sinovac-CoronaVac
