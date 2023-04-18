@@ -9,5 +9,4 @@ import java.time.*;
 public class VaccinationData {
     private Vaccine vaccine;
     private LocalDate date;
-    
 }

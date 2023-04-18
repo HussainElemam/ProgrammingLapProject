@@ -4,6 +4,8 @@
  */
 package covid.pkg19center;
 
+import covid.pkg19center.covid19GUI;
+
 /**
  *
  * @author husse
