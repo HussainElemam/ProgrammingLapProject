@@ -58,12 +58,27 @@ public class Maingui extends javax.swing.JFrame {
         jPanel1.add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 140, 40));
 
         b2.setText("Test Results");
+        b2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 140, 40));
 
         b3.setText("Set Result");
+        b3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 140, 40));
 
         b4.setText("Vaccination");
+        b4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                b4ActionPerformed(evt);
+            }
+        });
         jPanel1.add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 140, 40));
 
         b5.setText("Patiant Details");
@@ -109,7 +124,8 @@ public class Maingui extends javax.swing.JFrame {
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
         mainDesktop.removeAll();
-        
+        newTest nt = new newTest();
+        mainDesktop.add(nt).setVisible(true);
     }//GEN-LAST:event_b1ActionPerformed
 
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
@@ -117,6 +133,24 @@ public class Maingui extends javax.swing.JFrame {
         PatiantDetails ap = new PatiantDetails();
         mainDesktop.add(ap).setVisible(true);
     }//GEN-LAST:event_b5ActionPerformed
+
+    private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
+        mainDesktop.removeAll();
+        viewResults ap = new viewResults();
+        mainDesktop.add(ap).setVisible(true);
+    }//GEN-LAST:event_b2ActionPerformed
+
+    private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
+        mainDesktop.removeAll();
+        setResult ap = new setResult();
+        mainDesktop.add(ap).setVisible(true);
+    }//GEN-LAST:event_b3ActionPerformed
+
+    private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
+        mainDesktop.removeAll();
+        Vaccination ap = new Vaccination();
+        mainDesktop.add(ap).setVisible(true);
+    }//GEN-LAST:event_b4ActionPerformed
 
     /**
      * @param args the command line arguments
