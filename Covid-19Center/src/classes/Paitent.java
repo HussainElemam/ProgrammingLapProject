@@ -4,11 +4,7 @@
  */
 package classes;
 
-import backup.Person;
-import classes.Person;
-import classes.Person;
-import classes.VaccinationData;
-import classes.Vaccine;
+
 
 /**
  *
@@ -48,7 +44,7 @@ public class Paitent extends Person {
     public boolean isSuitable(Vaccine v){//this will be used to check if the paitents selected vaccine is suitable or not due to AGE
         if (super.getAge() > v.getMinAge())
         return true; // idk why i had to write 2 times
-        return true;
+        return false;
     }
     
     

@@ -4,13 +4,15 @@
  */
 package classes;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author majda
  */
 public class Person {
     private String Name;
-    private int Age;
+    private LocalDate Date;
     private int ID;
     private String Gender;
     public Person(){
@@ -20,9 +22,9 @@ public class Person {
         Gender = null;
                 
     }
-    public Person(String Name, int Age, int ID, String Gender) {
+    public Person(String Name, LocalDate Date, int ID, String Gender) {
         this.Name = Name;
-        this.Age = Age;
+        this.Date = Date;
         this.ID = ID;
         this.Gender = Gender;
         
