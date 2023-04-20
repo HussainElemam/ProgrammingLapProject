@@ -1,10 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package classes;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 /**
  *
@@ -12,19 +9,20 @@ import java.time.LocalDate;
  */
 public class Person {
     private String Name;
-    private LocalDate Date;
-    private int ID;
+    private LocalDate dob;
+    private String ID;
     private String Gender;
+    
     public Person(){
         Name = null;
-        Age = 0;
-        ID = 0;
+        dob = null;
+        ID = null;
         Gender = null;
                 
     }
-    public Person(String Name, LocalDate Date, int ID, String Gender) {
+    public Person(String Name, LocalDate dob, String ID, String Gender) {
         this.Name = Name;
-        this.Date = Date;
+        this.dob = dob;
         this.ID = ID;
         this.Gender = Gender;
         
@@ -38,19 +36,19 @@ public class Person {
         this.Name = Name;
     }
 
-    public int getAge() {
-        return Age;
+    public LocalDate getDob() {
+        return dob;
     }
 
-    public void setAge(int Age) {
-        this.Age = Age;
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
     }
 
-    public int getID() {
+    public String getID() {
         return ID;
     }
 
-    public void setID(int ID) {
+    public void setID(String ID) {
         this.ID = ID;
     }
 
@@ -62,13 +60,15 @@ public class Person {
         this.Gender = Gender;
     }
     
+    public int getAge(){
+        LocalDate curDate = LocalDate.now();
+        return Period.between(dob, curDate).getYears();
+    }
 
     @Override
     //change the to string
     public String toString() { 
-        return "Person{" + "Name=" + Name + ", Age=" + Age + ", ID=" + ID + "Gender = " + Gender + '}';
+        return Name + "," + dob + "," + ID + "," + Gender;
     }
-    
-    
     
 }

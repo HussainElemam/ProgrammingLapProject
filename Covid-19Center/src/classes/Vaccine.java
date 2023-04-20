@@ -11,18 +11,16 @@ public class Vaccine {
     private int numOfDoses;
     private int minAge;
     private int timeBetweenDoses;
-    public static ArrayList<Vaccine> vaccines;
 
-    public Vaccine(String vName, int numOfDoses, int minAge, int timeBetweenDoses, ArrayList diseases) {
+    public Vaccine(String vName, int numOfDoses, int minAge, int timeBetweenDoses) {
         this.vName = vName;
         this.numOfDoses = numOfDoses;
         this.minAge = minAge;
         this.timeBetweenDoses = timeBetweenDoses;
-        vaccines.add(this);
     }
     
     public Vaccine(){
-        this("", 0, 0, 0, null);
+        this("", 0, 0, 0);
     }
     
     public String getvName() {
