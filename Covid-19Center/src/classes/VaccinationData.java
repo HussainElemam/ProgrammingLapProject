@@ -8,15 +8,17 @@ import java.time.*;
  */
 public class VaccinationData {
     private Vaccine vaccine;
-    private LocalDate date;
-
+    private LocalDate dateOfFirstDose;
+    private int numOfDoses;
+    
     public VaccinationData(){
-        this(null, null);
+        this(null, null, 0);
     }
     
-    public VaccinationData(Vaccine vaccine, LocalDate date) {
+    public VaccinationData(Vaccine vaccine, LocalDate date, int numOfDoses) {
         this.vaccine = vaccine;
-        this.date = date;
+        this.dateOfFirstDose = date;
+        this.numOfDoses = numOfDoses;
     }
 
     public Vaccine getVaccine() {
@@ -28,15 +30,23 @@ public class VaccinationData {
     }
 
     public LocalDate getDate() {
-        return date;
+        return dateOfFirstDose;
     }
 
     public void setDate(int day, int month, int year) {
-        this.date = LocalDate.of(year, month, day);
+        this.dateOfFirstDose = LocalDate.of(year, month, day);
+    }
+
+    public int getNumOfDoses() {
+        return numOfDoses;
+    }
+
+    public void setNumOfDoses(int numOfDoses) {
+        this.numOfDoses = numOfDoses;
     }
 
     @Override
     public String toString() {
-        return vaccine + "," + date;
+        return vaccine.getvName() + ";" + dateOfFirstDose + ";" + numOfDoses;
     }
 }
