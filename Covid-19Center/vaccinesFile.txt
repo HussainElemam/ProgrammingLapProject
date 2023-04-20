@@ -1,0 +1,5 @@
+Pfizer,2,12,56
+AstraZeneca,2,18,56
+Janssen,1,18,0
+Moderna,2,1,60
+Sinopharm,2,18,14
