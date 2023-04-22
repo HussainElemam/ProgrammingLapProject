@@ -4,6 +4,10 @@
  */
 package covidgui;
 
+import classes.Patient;
+import classes.database;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author husse
@@ -13,6 +17,8 @@ public class setResult extends javax.swing.JInternalFrame {
     /**
      * Creates new form NewJInternalFrame
      */
+    Patient p;
+
     public setResult() {
         initComponents();
     }
@@ -26,7 +32,16 @@ public class setResult extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        groub = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        pos = new javax.swing.JRadioButton();
+        neg = new javax.swing.JRadioButton();
+        titlelbl = new javax.swing.JLabel();
+        idtf = new javax.swing.JTextField();
+        save = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -35,6 +50,55 @@ public class setResult extends javax.swing.JInternalFrame {
 
         jPanel2.setPreferredSize(new java.awt.Dimension(900, 510));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        jLabel5.setText("Enter the patient ID:");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 110, -1, 30));
+
+        groub.add(pos);
+        pos.setFont(new java.awt.Font("Georgia", 2, 14)); // NOI18N
+        pos.setText("Positive");
+        pos.setEnabled(false);
+        pos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                posActionPerformed(evt);
+            }
+        });
+        jPanel2.add(pos, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 240, -1, -1));
+
+        groub.add(neg);
+        neg.setFont(new java.awt.Font("Georgia", 2, 14)); // NOI18N
+        neg.setText("Negative");
+        neg.setEnabled(false);
+        jPanel2.add(neg, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 240, -1, -1));
+
+        titlelbl.setFont(new java.awt.Font("Georgia", 1, 16)); // NOI18N
+        titlelbl.setText("Test result");
+        titlelbl.setEnabled(false);
+        jPanel2.add(titlelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 90, 30));
+
+        idtf.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                idtfKeyReleased(evt);
+            }
+        });
+        jPanel2.add(idtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, 230, 30));
+
+        save.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
+        save.setText("SAVE");
+        save.setEnabled(false);
+        save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveActionPerformed(evt);
+            }
+        });
+        jPanel2.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 310, 110, 30));
+
+        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 410, 190));
+
+        jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 880, 400));
 
         jLabel3.setFont(new java.awt.Font("Georgia", 3, 30)); // NOI18N
         jLabel3.setText("Set Results");
@@ -62,11 +126,48 @@ public class setResult extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void posActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_posActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_posActionPerformed
+
+    private void idtfKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idtfKeyReleased
+        String txt = idtf.getText().trim();
+        p = database.getPatientById(txt);
+        if (p != null) {
+            titlelbl.setEnabled(true);
+            pos.setEnabled(true);
+            neg.setEnabled(true);
+            save.setEnabled(true);
+        }
+    }//GEN-LAST:event_idtfKeyReleased
+
+    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
+
+        if (pos.isSelected()) {
+            p.setResult('P');
+            JOptionPane.showMessageDialog(rootPane, "result added successfully");
+        } else if (neg.isSelected()) {
+            p.setResult('N');
+            JOptionPane.showMessageDialog(rootPane, "result added successfully");
+        } else {
+            JOptionPane.showMessageDialog(rootPane, "Please select the result");
+        }
+    }//GEN-LAST:event_saveActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup groub;
+    private javax.swing.JTextField idtf;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JRadioButton neg;
+    private javax.swing.JRadioButton pos;
+    private javax.swing.JButton save;
+    private javax.swing.JLabel titlelbl;
     // End of variables declaration//GEN-END:variables
 }

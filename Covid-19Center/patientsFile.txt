@@ -1,3 +1,3 @@
 Hussain,2004-09-15,7006,Male,Pfizer;2020-09-15;2021-09-15;2,P
-Hassan,2004-09-15,7007,Male,null,P
+Hassan,2004-09-15,7007,Male,null,N
 Ali,2004-09-15,7008,Male,Janssen;2020-09-15;null;1,P

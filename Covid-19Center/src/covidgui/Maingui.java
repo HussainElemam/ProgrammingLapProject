@@ -52,45 +52,50 @@ public class Maingui extends javax.swing.JFrame {
         jLabel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 70));
 
+        b1.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
         b1.setText("New Test");
         b1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b1ActionPerformed(evt);
             }
         });
-        jPanel1.add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 140, 40));
+        jPanel1.add(b1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 160, 50));
 
+        b2.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
         b2.setText("Test Results");
         b2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b2ActionPerformed(evt);
             }
         });
-        jPanel1.add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 140, 40));
+        jPanel1.add(b2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 160, 50));
 
+        b3.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
         b3.setText("Set Result");
         b3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b3ActionPerformed(evt);
             }
         });
-        jPanel1.add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 140, 40));
+        jPanel1.add(b3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 400, 160, 50));
 
+        b4.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
         b4.setText("Vaccination");
         b4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b4ActionPerformed(evt);
             }
         });
-        jPanel1.add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 140, 40));
+        jPanel1.add(b4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 160, 50));
 
+        b5.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
         b5.setText("Patiant Details");
         b5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b5ActionPerformed(evt);
             }
         });
-        jPanel1.add(b5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 530, 140, 40));
+        jPanel1.add(b5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 160, 50));
 
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 180, 530));
@@ -123,6 +128,7 @@ public class Maingui extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed

@@ -16,7 +16,7 @@ public class PatientDetails extends javax.swing.JInternalFrame {
      */
     private final DefaultListModel mod;
     Patient p;
-
+    
     public PatientDetails() {
         initComponents();
         menu.add(jPanel1);
@@ -83,7 +83,7 @@ public class PatientDetails extends javax.swing.JInternalFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,30 +141,30 @@ public class PatientDetails extends javax.swing.JInternalFrame {
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel7.setText("Name:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, -1, 30));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel8.setText("Age:");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, -1, 30));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel9.setText("ID:");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, -1, 30));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel10.setText("Gender:");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, -1, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, -1, 30));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel11.setText("Has vaccine:");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, 30));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel12.setText("Last result:");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, -1, -1));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, -1, 30));
 
         nametf.setEditable(false);
-        jPanel2.add(nametf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 220, 30));
+        jPanel2.add(nametf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 220, 30));
 
         agetf.setEditable(false);
         jPanel2.add(agetf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 220, 30));
@@ -173,10 +173,10 @@ public class PatientDetails extends javax.swing.JInternalFrame {
         jPanel2.add(idtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 220, 30));
 
         gendertf.setEditable(false);
-        jPanel2.add(gendertf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 220, 30));
+        jPanel2.add(gendertf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 220, 30));
 
         vaccinetf.setEditable(false);
-        jPanel2.add(vaccinetf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 370, 220, 30));
+        jPanel2.add(vaccinetf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 220, 30));
 
         resulttf.setEditable(false);
         jPanel2.add(resulttf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, 220, 30));
@@ -185,6 +185,7 @@ public class PatientDetails extends javax.swing.JInternalFrame {
 
         rb1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         rb1.setText("view vaccination details");
+        rb1.setEnabled(false);
         rb1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 rb1ActionPerformed(evt);
@@ -194,33 +195,42 @@ public class PatientDetails extends javax.swing.JInternalFrame {
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel14.setText("Vaccine:");
+        jLabel14.setEnabled(false);
         jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel15.setText("Date of first dose:");
+        jLabel15.setEnabled(false);
         jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel16.setText("Date of second dose:");
+        jLabel16.setEnabled(false);
         jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
 
         vaccine2.setEditable(false);
+        vaccine2.setEnabled(false);
         jPanel3.add(vaccine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 72, 170, 30));
 
         date1.setEditable(false);
+        date1.setEnabled(false);
         jPanel3.add(date1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 170, 30));
 
         date2.setEditable(false);
+        date2.setEnabled(false);
         jPanel3.add(date2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 170, 30));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel17.setText("Number of doses:");
+        jLabel17.setEnabled(false);
         jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
         nodtf.setEditable(false);
+        nodtf.setEnabled(false);
         jPanel3.add(nodtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 132, 170, 30));
 
         jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jLabel13.setEnabled(false);
         jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 310));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 450, 310));
@@ -267,21 +277,16 @@ public class PatientDetails extends javax.swing.JInternalFrame {
             date1.setText("");
             date2.setText("");
             searchtf.setText("");
-            jPanel3.setEnabled(true);
-            vaccine2.setEnabled(true);
-            date1.setEnabled(true);
-            nodtf.setEnabled(true);
-            date2.setEnabled(true);
-            rb1.setEnabled(true);
-            jLabel14.setEnabled(true);
-            jLabel15.setEnabled(true);
-            jLabel16.setEnabled(true);
-            jLabel17.setEnabled(true);
+            nodtf.setText("");
+            disableVData();
+            
         }
     }//GEN-LAST:event_cb1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+        
+        setVDataText();
+        disableVData();
         if (cb1.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(rootPane, "Please select a search method");
         } else if (cb1.getSelectedIndex() == 1) {
@@ -289,7 +294,7 @@ public class PatientDetails extends javax.swing.JInternalFrame {
         } else {
             p = database.getPatientById(searchtf.getText());
         }
-
+        
         if (p == null && cb1.getSelectedIndex() != 0) {
             JOptionPane.showMessageDialog(rootPane, "We can't fined this patient\ncheck the imformation you entered");
         } else {
@@ -311,21 +316,12 @@ public class PatientDetails extends javax.swing.JInternalFrame {
                 jLabel17.setEnabled(true);
             } else {
                 vaccinetf.setText("NO");
-                vaccine2.setEnabled(false);
-                date1.setEnabled(false);
-                date2.setEnabled(false);
-                nodtf.setEnabled(false);
-                rb1.setEnabled(false);
-                jLabel14.setEnabled(false);
-                jLabel15.setEnabled(false);
-                jLabel16.setEnabled(false);
-                jLabel17.setEnabled(false);
-
+                disableVData();
             }
-            String res = (p.getResult() == 'p') ? "Positive" : "Negative";
+            String res = (p.getResult() == 'P') ? "Positive" : "Negative";
             resulttf.setText(res);
             searchtf.setText("");
-
+            
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -360,13 +356,29 @@ public class PatientDetails extends javax.swing.JInternalFrame {
                 date2.setText(p.getPaitentvaccine().getDateOfSecondDose().toString());
             }
         } else {
-            vaccine2.setText("");
-            date1.setText("");
-            date2.setText("");
-            nodtf.setText("");
+            setVDataText();
         }
     }//GEN-LAST:event_rb1ActionPerformed
-
+    
+    private void disableVData() {
+        vaccine2.setEnabled(false);
+        date1.setEnabled(false);
+        date2.setEnabled(false);
+        nodtf.setEnabled(false);
+        rb1.setEnabled(false);
+        jLabel14.setEnabled(false);
+        jLabel15.setEnabled(false);
+        jLabel16.setEnabled(false);
+        jLabel17.setEnabled(false);
+    }
+    
+    private void setVDataText() {
+        rb1.setSelected(false);
+        vaccine2.setText("");
+        date1.setText("");
+        date2.setText("");
+        nodtf.setText("");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField agetf;
