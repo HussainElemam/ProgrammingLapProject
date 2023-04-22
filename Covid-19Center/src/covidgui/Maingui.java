@@ -17,7 +17,7 @@ public class Maingui extends javax.swing.JFrame {
      */
     public Maingui() {
         initComponents();
-        database d = new database();
+        new database();
     }
 
     /**

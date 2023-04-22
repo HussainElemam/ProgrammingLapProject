@@ -33,12 +33,7 @@ public class database {
                         Integer.parseInt(line[3])
                 ));
             }
-
-//        while (vDataFile.hasNext()){
-//            String[] line = vDataFile.nextLine().split(",");
-//            
-//        }
-//        
+       
             while (patientsFile.hasNext()) {
                 String[] line = patientsFile.nextLine().split(",");
                 VaccinationData vd;

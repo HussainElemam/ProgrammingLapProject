@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
- */
 package covidgui;
 
 import classes.Patient;
@@ -285,8 +281,7 @@ public class PatientDetails extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_cb1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-        searchtf.setText("");
+
         if (cb1.getSelectedIndex() == 0) {
             JOptionPane.showMessageDialog(rootPane, "Please select a search method");
         } else if (cb1.getSelectedIndex() == 1) {
@@ -329,6 +324,7 @@ public class PatientDetails extends javax.swing.JInternalFrame {
             }
             String res = (p.getResult() == 'p') ? "Positive" : "Negative";
             resulttf.setText(res);
+            searchtf.setText("");
 
         }
 
