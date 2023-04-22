@@ -4,6 +4,8 @@
  */
 package covidgui;
 
+import classes.database;
+
 /**
  *
  * @author husse
@@ -15,6 +17,7 @@ public class Maingui extends javax.swing.JFrame {
      */
     public Maingui() {
         initComponents();
+        database d = new database();
     }
 
     /**
@@ -130,7 +133,7 @@ public class Maingui extends javax.swing.JFrame {
 
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
         mainDesktop.removeAll();
-        PatiantDetails ap = new PatiantDetails();
+        PatientDetails ap = new PatientDetails();
         mainDesktop.add(ap).setVisible(true);
     }//GEN-LAST:event_b5ActionPerformed
 

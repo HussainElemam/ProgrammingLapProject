@@ -11,16 +11,16 @@ public class Person {
     private String Name;
     private LocalDate dob;
     private String ID;
-    private char Gender;
+    private String Gender;
     
     public Person(){
         Name = "";
         dob = null;
         ID = "";
-        Gender = '\u0000';
+        Gender = "";
                 
     }
-    public Person(String Name, LocalDate dob, String ID, char Gender) {
+    public Person(String Name, LocalDate dob, String ID, String Gender) {
         this.Name = Name;
         this.dob = dob;
         this.ID = ID;
@@ -52,11 +52,11 @@ public class Person {
         this.ID = ID;
     }
 
-    public char getGender() {
+    public String getGender() {
         return Gender;
     }
 
-    public void setGender(char Gender) {
+    public void setGender(String Gender) {
         this.Gender = Gender;
     }
     

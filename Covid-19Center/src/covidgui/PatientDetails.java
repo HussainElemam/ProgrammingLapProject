@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  *
  * @author husse
  */
-public class PatiantDetails extends javax.swing.JInternalFrame {
+public class PatientDetails extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form NewJInternalFrame
@@ -21,7 +21,7 @@ public class PatiantDetails extends javax.swing.JInternalFrame {
     private final DefaultListModel mod;
     Patient p;
 
-    public PatiantDetails() {
+    public PatientDetails() {
         initComponents();
         menu.add(jPanel1);
         mod = new DefaultListModel();

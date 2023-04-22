@@ -21,7 +21,7 @@ public class Patient extends Person {
         this.Result = Result;
     }
 
-    public Patient(String Name, LocalDate date, String ID, char Gender, VaccinationData Paitentvaccine, char Result) {
+    public Patient(String Name, LocalDate date, String ID, String Gender, VaccinationData Paitentvaccine, char Result) {
         super(Name, date, ID, Gender);
         this.Paitentvaccine = Paitentvaccine;
         this.Result = Result;

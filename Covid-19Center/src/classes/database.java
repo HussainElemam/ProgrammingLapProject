@@ -12,52 +12,58 @@ import java.util.Scanner;
  */
 public class database {
 
-    private ArrayList<Patient> patients;
-    private ArrayList<Vaccine> vaccines;
-//    private ArrayList<VaccinationData> vData;
+    public static ArrayList<Patient> patients = new ArrayList();
+    public static ArrayList<Vaccine> vaccines = new ArrayList();
 
-    Scanner patientsFile = new Scanner(new FileReader("patientsFile.txt"));
-    Scanner vaccinesFile = new Scanner(new FileReader("vaccinesFile.txt"));
-//    Scanner vDataFile = new Scanner(new FileReader("vDataFile.txt"));
+    private Scanner patientsFile = null;
+    private Scanner vaccinesFile = null;
 
-    public database() throws FileNotFoundException {
-        while (vaccinesFile.hasNext()) {
-            String[] line = vaccinesFile.nextLine().split(",");
-            vaccines.add(new Vaccine(line[0], Integer.parseInt(line[1]), Integer.parseInt(line[2]), Integer.parseInt(line[3])));
-        }
+    public database() {
+
+        try {
+            patientsFile = new Scanner(new FileReader("patientsFile.txt"));
+            vaccinesFile = new Scanner(new FileReader("vaccinesFile.txt"));
+
+            while (vaccinesFile.hasNext()) {
+                String[] line = vaccinesFile.nextLine().split(",");
+                vaccines.add(new Vaccine(
+                        line[0],
+                        Integer.parseInt(line[1]),
+                        Integer.parseInt(line[2]),
+                        Integer.parseInt(line[3])
+                ));
+            }
 
 //        while (vDataFile.hasNext()){
 //            String[] line = vDataFile.nextLine().split(",");
 //            
 //        }
 //        
-        while (patientsFile.hasNext()) {
-            String[] line = patientsFile.nextLine().split(",");
-            String[] vds = line[4].split(";");
-            patients.add(new Patient(
-                line[0],
-                LocalDate.parse(line[1]),
-                line[2],
-                line[3].charAt(0),
-                new VaccinationData(
-                    getVaccineByName(vds[0]),
-                    LocalDate.parse(vds[1]),
-                    Integer.parseInt(vds[2])
-                ),
-                line[5].charAt(0)
-            ));
+            while (patientsFile.hasNext()) {
+                String[] line = patientsFile.nextLine().split(",");
+                VaccinationData vd;
+                if (line[4].equals("null")) {
+                    vd = null;
+                } else {
+                    String[] vds = (line[4].equals("null")) ? null : line[4].split(";");
+                    vd = new VaccinationData(getVaccineByName(vds[0]), LocalDate.parse(vds[1]), (vds[2].equals("null"))? null :LocalDate.parse(vds[2]), Integer.parseInt(vds[3]));
+                }
+                patients.add(new Patient(
+                        line[0],
+                        LocalDate.parse(line[1]),
+                        line[2],
+                        line[3],
+                        vd,
+                        line[5].charAt(0)
+                ));
+            }
+            patientsFile.close();
+        } catch (FileNotFoundException fnf) {
+            System.out.println("file not found");
         }
     }
 
-    public ArrayList<Patient> getPatients() {
-        return patients;
-    }
-
-    public ArrayList<Vaccine> getVaccines() {
-        return vaccines;
-    }
-
-    public Vaccine getVaccineByName(String name) {
+    public static Vaccine getVaccineByName(String name) {
         for (Vaccine v : vaccines) {
             if (v.getvName().equals(name)) {
                 return v;
@@ -65,4 +71,23 @@ public class database {
         }
         return null;
     }
+
+    public static Patient getPatientByName(String name) {
+        for (Patient p : patients) {
+            if (p.getName().toLowerCase().equals(name.toLowerCase())) {
+                return p;
+            }
+        }
+        return null;
+    }
+
+    public static Patient getPatientById(String name) {
+        for (Patient p : patients) {
+            if (p.getID().equals(name)) {
+                return p;
+            }
+        }
+        return null;
+    }
+
 }
