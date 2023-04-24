@@ -58,7 +58,6 @@ public class PatientDetails extends javax.swing.JInternalFrame {
         gendertf = new javax.swing.JTextField();
         vaccinetf = new javax.swing.JTextField();
         resulttf = new javax.swing.JTextField();
-        jPanel3 = new javax.swing.JPanel();
         rb1 = new javax.swing.JRadioButton();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -181,8 +180,6 @@ public class PatientDetails extends javax.swing.JInternalFrame {
         resulttf.setEditable(false);
         jPanel2.add(resulttf, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 430, 220, 30));
 
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         rb1.setFont(new java.awt.Font("Georgia", 1, 18)); // NOI18N
         rb1.setText("view vaccination details");
         rb1.setEnabled(false);
@@ -191,53 +188,52 @@ public class PatientDetails extends javax.swing.JInternalFrame {
                 rb1ActionPerformed(evt);
             }
         });
-        jPanel3.add(rb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        jPanel2.add(rb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel14.setText("Vaccine:");
         jLabel14.setEnabled(false);
-        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel15.setText("Date of first dose:");
         jLabel15.setEnabled(false);
-        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
+        jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, -1, -1));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel16.setText("Date of second dose:");
         jLabel16.setEnabled(false);
-        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 420, -1, -1));
 
         vaccine2.setEditable(false);
         vaccine2.setEnabled(false);
-        jPanel3.add(vaccine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 72, 170, 30));
+        jPanel2.add(vaccine2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 240, 170, 30));
 
         date1.setEditable(false);
         date1.setEnabled(false);
-        jPanel3.add(date1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 180, 170, 30));
+        jPanel2.add(date1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 350, 170, 30));
 
         date2.setEditable(false);
         date2.setEnabled(false);
-        jPanel3.add(date2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 170, 30));
+        jPanel2.add(date2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 410, 170, 30));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         jLabel17.setText("Number of doses:");
         jLabel17.setEnabled(false);
-        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, -1, -1));
 
         nodtf.setEditable(false);
         nodtf.setEnabled(false);
-        jPanel3.add(nodtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 132, 170, 30));
+        jPanel2.add(nodtf, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 300, 170, 30));
 
         jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jLabel13.setEnabled(false);
-        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 310));
-
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 170, 450, 310));
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 170, 450, 310));
 
         jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 410, 310));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/lightBlue.jpg"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 901, 490));
 
@@ -304,7 +300,6 @@ public class PatientDetails extends javax.swing.JInternalFrame {
             gendertf.setText(p.getGender());
             if (p.getPaitentvaccine() != null) {
                 vaccinetf.setText("YES");
-                jPanel3.setEnabled(true);
                 vaccine2.setEnabled(true);
                 date1.setEnabled(true);
                 date2.setEnabled(true);
@@ -407,7 +402,6 @@ public class PatientDetails extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<String> list;
     private javax.swing.JPopupMenu menu;

@@ -113,6 +113,7 @@ public class Maingui extends javax.swing.JFrame {
 
         jPanel1.add(mainDesktop, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 910, 520));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/MidicalBackground.jpg"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 600));
 
