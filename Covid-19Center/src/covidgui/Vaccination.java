@@ -31,6 +31,7 @@ public class Vaccination extends javax.swing.JInternalFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
+        setClosable(true);
         setPreferredSize(new java.awt.Dimension(910, 520));
 
         jPanel2.setPreferredSize(new java.awt.Dimension(900, 510));

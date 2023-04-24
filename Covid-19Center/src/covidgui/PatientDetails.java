@@ -91,6 +91,7 @@ public class PatientDetails extends javax.swing.JInternalFrame {
 
         menu.setFocusable(false);
 
+        setClosable(true);
         setPreferredSize(new java.awt.Dimension(910, 520));
 
         jPanel2.setPreferredSize(new java.awt.Dimension(900, 510));
