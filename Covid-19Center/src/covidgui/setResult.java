@@ -77,6 +77,11 @@ public class setResult extends javax.swing.JInternalFrame {
         titlelbl.setEnabled(false);
         jPanel2.add(titlelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, 90, 30));
 
+        idtf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idtfActionPerformed(evt);
+            }
+        });
         idtf.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 idtfKeyReleased(evt);
@@ -153,6 +158,10 @@ public class setResult extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(rootPane, "Please select the result");
         }
     }//GEN-LAST:event_saveActionPerformed
+
+    private void idtfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idtfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idtfActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

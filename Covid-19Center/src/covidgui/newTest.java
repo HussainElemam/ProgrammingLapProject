@@ -4,7 +4,11 @@
  */
 package covidgui;
 
+import classes.Person;
+import classes.Patient;
+import classes.database;
 import java.time.LocalDate;
+import java.time.Month;
 
 /**
  *
@@ -31,20 +35,23 @@ public class newTest extends javax.swing.JInternalFrame {
         RDGroup = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        RDF = new javax.swing.JRadioButton();
+        RDM = new javax.swing.JRadioButton();
         TFn = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         TFid = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         cb1 = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        CBD = new javax.swing.JComboBox<>();
+        CBM = new javax.swing.JComboBox<>();
+        TFY = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(910, 520));
 
@@ -55,31 +62,32 @@ public class newTest extends javax.swing.JInternalFrame {
         jLabel3.setText("New Test");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 340, 50));
 
-        jRadioButton2.setText("Female");
-        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+        RDF.setText("Female");
+        RDF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton2ActionPerformed(evt);
+                RDFActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, -1, -1));
+        jPanel2.add(RDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, -1, -1));
 
-        jRadioButton1.setText("Male");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        RDM.setText("Male");
+        RDM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                RDMActionPerformed(evt);
             }
         });
-        jPanel2.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, -1, -1));
+        jPanel2.add(RDM, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, -1, -1));
 
         TFn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TFnActionPerformed(evt);
             }
         });
-        jPanel2.add(TFn, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 210, -1));
+        jPanel2.add(TFn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 210, -1));
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
-        jPanel2.add(TFid, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 210, -1));
+        jPanel2.add(TFid, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 210, -1));
 
+        jButton1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jButton1.setText("Save");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,21 +96,35 @@ public class newTest extends javax.swing.JInternalFrame {
         });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
 
-        cb1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cb1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb1ActionPerformed(evt);
+            }
+        });
         jPanel2.add(cb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
 
-        jLabel5.setText("Date of test");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
+        jButton2.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        jButton2.setText("Show Dates:");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jLabel4.setText("ID");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
 
+        jLabel7.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jLabel7.setText("Gender");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
 
+        jLabel8.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jLabel8.setText("Date of birth");
         jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
+        jLabel9.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jLabel9.setText("Name");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
 
@@ -111,6 +133,13 @@ public class newTest extends javax.swing.JInternalFrame {
 
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 901, 490));
+
+        CBD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", " " }));
+        jPanel2.add(CBD, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, -1, -1));
+
+        CBM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", " " }));
+        jPanel2.add(CBM, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, -1, -1));
+        jPanel2.add(TFY, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 110, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -134,40 +163,78 @@ public class newTest extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        cb1.addItem(LocalDate.now().toString());
         String name = TFn.getText();
         String id = TFid.getText();
-        //still need to add gender from selected RD
+        String gender = "";
+        if (RDM.isSelected()){
+            gender = "Male";
+        }
+        else if (RDF.isSelected()){
+            gender = "Female";
+            
+        }//we can use another else if he didnt press on any gender then we show on LBL that he has to pick one
+        int d = Integer.parseInt(CBD.getSelectedItem().toString());
+        int m = Integer.parseInt(CBM.getSelectedItem().toString());
+        int y = Integer.parseInt(TFY.getText());
+        LocalDate date = LocalDate.of(y, m , d);
+        
+         Person person = new Person(name, date, id, gender);
+         patients
+         
+         
+         
+         
+         
+         
+
+        
+        
         //maybe i should add date of birth into person class
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+    private void RDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RDFActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton2ActionPerformed
+    }//GEN-LAST:event_RDFActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void RDMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RDMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+    }//GEN-LAST:event_RDMActionPerformed
+
+    private void cb1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb1ActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_cb1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        cb1.removeAllItems();
+        cb1.addItem(LocalDate.now().toString());
+        cb1.addItem(LocalDate.now().plusDays(2).toString());
+        cb1.addItem(LocalDate.now().plusDays(4).toString());
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> CBD;
+    private javax.swing.JComboBox<String> CBM;
+    private javax.swing.JRadioButton RDF;
     private javax.swing.ButtonGroup RDGroup;
+    private javax.swing.JRadioButton RDM;
+    private javax.swing.JTextField TFY;
     private javax.swing.JTextField TFid;
     private javax.swing.JTextField TFn;
     private javax.swing.JComboBox<String> cb1;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     // End of variables declaration//GEN-END:variables
 }
