@@ -38,8 +38,8 @@ public class Maingui extends javax.swing.JFrame {
         b4 = new javax.swing.JButton();
         b5 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        mainDesktop = new javax.swing.JDesktopPane();
         jLabel1 = new javax.swing.JLabel();
+        mainDesktop = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -100,6 +100,12 @@ public class Maingui extends javax.swing.JFrame {
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 180, 530));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/MidicalBackground.jpg"))); // NOI18N
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 600));
+
+        mainDesktop.setBackground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout mainDesktopLayout = new javax.swing.GroupLayout(mainDesktop);
         mainDesktop.setLayout(mainDesktopLayout);
         mainDesktopLayout.setHorizontalGroup(
@@ -112,10 +118,6 @@ public class Maingui extends javax.swing.JFrame {
         );
 
         jPanel1.add(mainDesktop, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 910, 520));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/MidicalBackground.jpg"))); // NOI18N
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 600));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
