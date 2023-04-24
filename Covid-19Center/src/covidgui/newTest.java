@@ -5,10 +5,10 @@
 package covidgui;
 
 import classes.Person;
-import classes.Patient;
 import classes.database;
+import java.time.DateTimeException;
 import java.time.LocalDate;
-import java.time.Month;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,6 +21,7 @@ public class newTest extends javax.swing.JInternalFrame {
      */
     public newTest() {
         initComponents();
+        initialize();
     }
 
     /**
@@ -35,23 +36,27 @@ public class newTest extends javax.swing.JInternalFrame {
         RDGroup = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        RDF = new javax.swing.JRadioButton();
-        RDM = new javax.swing.JRadioButton();
-        TFn = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        TFid = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         cb1 = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        PANEL = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        RDM = new javax.swing.JRadioButton();
+        RDF = new javax.swing.JRadioButton();
+        jLabel8 = new javax.swing.JLabel();
         CBD = new javax.swing.JComboBox<>();
         CBM = new javax.swing.JComboBox<>();
         TFY = new javax.swing.JTextField();
+        TFn = new javax.swing.JTextField();
+        LBL = new javax.swing.JLabel();
+        RDE = new javax.swing.JRadioButton();
+        RDN = new javax.swing.JRadioButton();
+        jLabel1 = new javax.swing.JLabel();
+        TFid = new javax.swing.JTextField();
 
         setClosable(true);
         setPreferredSize(new java.awt.Dimension(910, 520));
@@ -62,31 +67,7 @@ public class newTest extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Georgia", 3, 30)); // NOI18N
         jLabel3.setText("New Test");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 340, 50));
-
-        RDF.setText("Female");
-        RDF.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RDFActionPerformed(evt);
-            }
-        });
-        jPanel2.add(RDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, -1, -1));
-
-        RDM.setText("Male");
-        RDM.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RDMActionPerformed(evt);
-            }
-        });
-        jPanel2.add(RDM, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, -1, -1));
-
-        TFn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TFnActionPerformed(evt);
-            }
-        });
-        jPanel2.add(TFn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 210, -1));
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
-        jPanel2.add(TFid, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 210, -1));
 
         jButton1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jButton1.setText("Save");
@@ -95,63 +76,113 @@ public class newTest extends javax.swing.JInternalFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, -1, -1));
 
         cb1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cb1ActionPerformed(evt);
             }
         });
-        jPanel2.add(cb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
+        jPanel2.add(cb1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 290, -1, -1));
 
         jButton2.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        jButton2.setText("Show Dates:");
+        jButton2.setText("AVAILABLE DATES");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jLabel4.setText("ID");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        jLabel7.setText("Gender");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        jLabel8.setText("Date of birth");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
-
-        jLabel9.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
-        jLabel9.setText("Name");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 70));
 
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 901, 490));
+        PANEL.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        jLabel9.setText("Name");
+        PANEL.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        jLabel7.setText("Gender");
+        PANEL.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+
+        RDGroup.add(RDM);
+        RDM.setText("Male");
+        RDM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RDMActionPerformed(evt);
+            }
+        });
+        PANEL.add(RDM, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
+
+        RDGroup.add(RDF);
+        RDF.setText("Female");
+        RDF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RDFActionPerformed(evt);
+            }
+        });
+        PANEL.add(RDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        jLabel8.setText("Date of birth");
+        PANEL.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         CBD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", " " }));
-        jPanel2.add(CBD, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 240, -1, -1));
+        PANEL.add(CBD, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, -1, -1));
 
         CBM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", " " }));
-        jPanel2.add(CBM, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, -1, -1));
-        jPanel2.add(TFY, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 110, -1));
+        PANEL.add(CBM, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, -1, -1));
+        PANEL.add(TFY, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 110, -1));
+
+        TFn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TFnActionPerformed(evt);
+            }
+        });
+        PANEL.add(TFn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 210, -1));
+
+        jPanel2.add(PANEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 450, 140));
+
+        LBL.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        LBL.setForeground(new java.awt.Color(204, 0, 0));
+        jPanel2.add(LBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 380, 320, 70));
+
+        RDE.setText("Existing paitent");
+        RDE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RDEActionPerformed(evt);
+            }
+        });
+        jPanel2.add(RDE, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
+
+        RDN.setText("New Paitent ");
+        RDN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RDNActionPerformed(evt);
+            }
+        });
+        jPanel2.add(RDN, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, -1, -1));
+
+        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 901, 490));
+        jPanel2.add(TFid, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 210, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 901, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -164,34 +195,43 @@ public class newTest extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        String name = TFn.getText();
-        String id = TFid.getText();
-        String gender = "";
-        if (RDM.isSelected()){
-            gender = "Male";
+        try {
+            if (TFid.getText().equals("") || TFn.getText().equals("") || RDGroup.getSelection() == null || TFY.getText().equals("")) {
+                JOptionPane.showMessageDialog(rootPane, "Fill all informations please");
+            } else {
+                if (RDN.isSelected()) {
+
+                    String name = TFn.getText();
+                    String id = TFid.getText();
+                    String gender = "";
+                    if (RDM.isSelected()) {
+                        gender = "Male";
+                    } else if (RDF.isSelected()) {
+                        gender = "Female";
+
+                    }//we can use another else if he didnt press on any gender then we show on LBL that he has to pick one
+                    int d = Integer.parseInt(CBD.getSelectedItem().toString());
+                    int m = Integer.parseInt(CBM.getSelectedItem().toString());
+                    int y = Integer.parseInt(TFY.getText());
+                    LocalDate date = LocalDate.of(y, m, d);
+
+                    Person person = new Person(name, date, id, gender);
+                    // i will add paitent constructor and add rdb to check if he has vaccine or not 
+                    // if he has vaccine add vaccination data to the paitent 
+                } else if (RDE.isSelected()) {
+                    String id = TFid.getText();
+                    if (database.getPatientById(id) != null) {
+
+                    } else {
+                        LBL.setText("Enter A valid ID");
+                    }
+                }
+            }
+
+            //maybe i should add date of birth into person class
+        } catch (DateTimeException dte) {
+            JOptionPane.showMessageDialog(rootPane, "Incorrect Date");
         }
-        else if (RDF.isSelected()){
-            gender = "Female";
-            
-        }//we can use another else if he didnt press on any gender then we show on LBL that he has to pick one
-        int d = Integer.parseInt(CBD.getSelectedItem().toString());
-        int m = Integer.parseInt(CBM.getSelectedItem().toString());
-        int y = Integer.parseInt(TFY.getText());
-        LocalDate date = LocalDate.of(y, m , d);
-        
-         Person person = new Person(name, date, id, gender);
-         
-         
-         
-         
-         
-         
-         
-
-        
-        
-        //maybe i should add date of birth into person class
-
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void RDFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RDFActionPerformed
@@ -215,13 +255,36 @@ public class newTest extends javax.swing.JInternalFrame {
         cb1.addItem(LocalDate.now().plusDays(4).toString());
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void RDEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RDEActionPerformed
+        // TODO add your handling code here:
+        PANEL.setVisible(false);
+        RDN.setSelected(false);
+
+    }//GEN-LAST:event_RDEActionPerformed
+
+    private void RDNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RDNActionPerformed
+        // TODO add your handling code here:
+        RDE.setSelected(false);
+        PANEL.setVisible(true);
+
+
+    }//GEN-LAST:event_RDNActionPerformed
+
+    private void initialize() {
+        PANEL.setVisible(false);
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CBD;
     private javax.swing.JComboBox<String> CBM;
+    private javax.swing.JLabel LBL;
+    private javax.swing.JPanel PANEL;
+    private javax.swing.JRadioButton RDE;
     private javax.swing.JRadioButton RDF;
     private javax.swing.ButtonGroup RDGroup;
     private javax.swing.JRadioButton RDM;
+    private javax.swing.JRadioButton RDN;
     private javax.swing.JTextField TFY;
     private javax.swing.JTextField TFid;
     private javax.swing.JTextField TFn;
