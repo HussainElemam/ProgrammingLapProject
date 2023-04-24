@@ -52,11 +52,12 @@ public class newTest extends javax.swing.JInternalFrame {
         CBM = new javax.swing.JComboBox<>();
         TFY = new javax.swing.JTextField();
         TFn = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
         LBL = new javax.swing.JLabel();
         RDE = new javax.swing.JRadioButton();
         RDN = new javax.swing.JRadioButton();
-        jLabel1 = new javax.swing.JLabel();
         TFid = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
         setPreferredSize(new java.awt.Dimension(910, 520));
@@ -147,6 +148,9 @@ public class newTest extends javax.swing.JInternalFrame {
         });
         PANEL.add(TFn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 210, -1));
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/lightBlue.jpg"))); // NOI18N
+        PANEL.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 140));
+
         jPanel2.add(PANEL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 450, 140));
 
         LBL.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
@@ -168,10 +172,11 @@ public class newTest extends javax.swing.JInternalFrame {
             }
         });
         jPanel2.add(RDN, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, -1, -1));
+        jPanel2.add(TFid, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 210, -1));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/lightBlue.jpg"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 901, 490));
-        jPanel2.add(TFid, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 210, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -295,6 +300,7 @@ public class newTest extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
