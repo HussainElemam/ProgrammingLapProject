@@ -179,7 +179,7 @@ public class newTest extends javax.swing.JInternalFrame {
         LocalDate date = LocalDate.of(y, m , d);
         
          Person person = new Person(name, date, id, gender);
-         patients
+         
          
          
          
