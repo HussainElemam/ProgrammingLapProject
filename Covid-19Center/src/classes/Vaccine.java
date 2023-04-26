@@ -52,7 +52,7 @@ public class Vaccine {
     public void setTimeBetweenDoses(int timeBetweenDoses) {
         this.timeBetweenDoses = timeBetweenDoses;
     }
-
+    
     @Override
     public String toString() {
         return vName + " " + numOfDoses + " " + minAge + " " + timeBetweenDoses;

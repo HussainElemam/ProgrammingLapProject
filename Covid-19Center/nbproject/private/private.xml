@@ -4,14 +4,18 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/src/covidgui/setResult.java</file>
-            <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/src/covidgui/viewResults.java</file>
+            <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/vDataFile.txt</file>
             <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/src/covidgui/Vaccination.java</file>
-            <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/src/covidgui/PatientDetails.java</file>
             <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/src/classes/Patient.java</file>
             <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/src/classes/Person.java</file>
+            <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/src/covidgui/newTest.java</file>
+            <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/patientsFile.txt</file>
+            <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/src/covidgui/viewResults.java</file>
+            <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/src/classes/Vaccine.java</file>
+            <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/src/covidgui/PatientDetails.java</file>
+            <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/vaccinesFile.txt</file>
             <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/src/classes/database.java</file>
             <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/src/covidgui/Maingui.java</file>
-            <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/src/covidgui/newTest.java</file>
             <file>file:/C:/Users/majda/Downloads/NB-windows/ProgrammingLapProject/Covid-19Center/src/classes/VaccinationData.java</file>
         </group>
     </open-files>
