@@ -9,7 +9,7 @@ import java.time.LocalDate;
  * @author majda
  */
 public class Patient extends Person {
-    VaccinationData Paitentvaccine ;
+    private VaccinationData Paitentvaccine ;
     private char Result;
 
 //    public Patient() {
@@ -25,6 +25,7 @@ public class Patient extends Person {
         super(Name, date, ID, Gender);
         this.Paitentvaccine = Paitentvaccine;
         this.Result = Result;
+        database.patients.add(this);
     }
 
     public VaccinationData getPaitentvaccine() {
@@ -45,6 +46,15 @@ public class Patient extends Person {
     public boolean isSuitable(Vaccine v){
         //this will be used to check if the paitents selected vaccine is suitable or not due to AGE
         return super.getAge() >= v.getMinAge();
+    }
+    
+    @Override
+    public String toString(){
+        return super.toString() + "," + Paitentvaccine.toString() + "," + Result;
+    }
+    
+    public String pToString(){
+        return super.toString();
     }
     
 }
