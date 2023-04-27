@@ -2,6 +2,7 @@ package classes;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -33,7 +34,7 @@ public class database {
                         Integer.parseInt(line[3])
                 ));
             }
-       
+
             while (patientsFile.hasNext()) {
                 String[] line = patientsFile.nextLine().split(",");
                 VaccinationData vd;
@@ -41,21 +42,40 @@ public class database {
                     vd = null;
                 } else {
                     String[] vds = (line[4].equals("null")) ? null : line[4].split(";");
-                    vd = new VaccinationData(getVaccineByName(vds[0]), LocalDate.parse(vds[1]), (vds[2].equals("null"))? null :LocalDate.parse(vds[2]), Integer.parseInt(vds[3]));
+                    vd = new VaccinationData(getVaccineByName(vds[0]), LocalDate.parse(vds[1]), (vds[2].equals("null")) ? null : LocalDate.parse(vds[2]), Integer.parseInt(vds[3]));
                 }
-                patients.add(new Patient(
+                new Patient(
                         line[0],
                         LocalDate.parse(line[1]),
                         line[2],
                         line[3],
                         vd,
                         line[5].charAt(0)
-                ));
+                );
             }
             patientsFile.close();
         } catch (FileNotFoundException fnf) {
             System.out.println("file not found");
         }
+        
+//        int check;
+//        do{
+//            check = 0;
+//        for (int i = 0; i < patients.size() - 1; i++) {
+//            if(Integer.parseInt(patients.get(i).getID()) > Integer.parseInt(patients.get(i+1).getID())){
+//                System.out.println(patients.get(i).getID());
+//                System.out.println(patients.get(i+1).getID());
+//                patients.add(i, patients.get(i + 1));
+//                patients.remove(i + 2);
+//                check++;
+//            }
+//        }
+//            System.out.println("check: " + check);
+//        }while(check != 0);
+/*        Not Important I just wanted to sort the patient in the file by their ID 
+          manually then I said why not to do it outomaticly ^-^
+*/
+
     }
 
     public static Vaccine getVaccineByName(String name) {
@@ -83,6 +103,28 @@ public class database {
             }
         }
         return null;
+    }
+
+    public static void save() {
+        try {
+            PrintWriter write = new PrintWriter("patientsFile.txt");
+            String data = "";
+            for(Patient p: patients){
+                if(p.getPaitentvaccine() != null){
+                    if(p.getPaitentvaccine().getDateOfSecondDose() != null){
+                        data += p + "\n";
+                    }else{
+                        data += p.pToString() + "," + p.getPaitentvaccine().getVaccine().getvName() + ";" + p.getPaitentvaccine().getDateOfFirstDose() + ";null;" + p.getPaitentvaccine().getNumOfDoses() + "," + p.getResult() + "\n";
+                    }
+                }else{
+                    data += p.pToString() + ",null," + p.getResult() + "\n";
+                }
+            }
+            write.print(data);
+            write.close();
+        } catch (FileNotFoundException fnf) {
+            System.out.println("file not found");
+        }
     }
 
 }
