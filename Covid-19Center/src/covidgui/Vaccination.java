@@ -45,6 +45,8 @@ public class Vaccination extends javax.swing.JInternalFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
@@ -54,30 +56,44 @@ public class Vaccination extends javax.swing.JInternalFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         CB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select one....", "Pfizer", "Sinopharm", "AstraZeneca", "Janssen", "Moderna" }));
+        CB.setEnabled(false);
         CB.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CBActionPerformed(evt);
             }
         });
-        jPanel2.add(CB, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 120, -1));
+        jPanel2.add(CB, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 120, 30));
 
         jButton1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         jButton1.setText("Submit");
+        jButton1.setEnabled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 110, 30));
-        jPanel2.add(TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 90, 120, -1));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 110, 30));
 
-        jLabel5.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        TF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TFActionPerformed(evt);
+            }
+        });
+        TF.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                TFKeyReleased(evt);
+            }
+        });
+        jPanel2.add(TF, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, 160, 30));
+
+        jLabel5.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
         jLabel5.setText("Enter your ID");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 130, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 130, 30));
 
-        jLabel4.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
         jLabel4.setText("Choose the vaccine:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 140, 50));
+        jLabel4.setEnabled(false);
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 150, 30));
 
         jLabel3.setFont(new java.awt.Font("Georgia", 3, 30)); // NOI18N
         jLabel3.setText("Vaccination");
@@ -85,6 +101,12 @@ public class Vaccination extends javax.swing.JInternalFrame {
 
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 70));
+
+        jLabel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 170, 410, 190));
+
+        jLabel7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 880, 400));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/lightBlue.jpg"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -155,6 +177,20 @@ public class Vaccination extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CBActionPerformed
 
+    private void TFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TFActionPerformed
+
+    private void TFKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_TFKeyReleased
+        String txt = TF.getText().trim();
+        p = database.getPatientById(txt);
+        if (p != null) {
+            CB.setEnabled(true);
+            jButton1.setEnabled(true);
+            jLabel4.setEnabled(true);
+        }
+    }//GEN-LAST:event_TFKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CB;
@@ -165,6 +201,8 @@ public class Vaccination extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
