@@ -1,5 +1,5 @@
-# ProgrammingLapProject
-# COVID-19 Center
+## ProgrammingLapProject
+## COVID-19 Center
 
 ### Students:
   1. Hussain Elemam - 700039146
