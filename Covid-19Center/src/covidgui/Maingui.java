@@ -109,7 +109,7 @@ public class Maingui extends javax.swing.JFrame {
         mainDesktop.setBackground(new java.awt.Color(137, 218, 247));
         mainDesktop.setEnabled(false);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/MBG4.jpg"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MBG4.jpg"))); // NOI18N
         jLabel5.setText("jLabel5");
 
         mainDesktop.setLayer(jLabel5, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -127,7 +127,7 @@ public class Maingui extends javax.swing.JFrame {
 
         jPanel1.add(mainDesktop, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, 910, 520));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/MidicalBackground2.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/MidicalBackground2.jpg"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 600));
 

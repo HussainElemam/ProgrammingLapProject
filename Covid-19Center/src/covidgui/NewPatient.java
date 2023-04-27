@@ -226,7 +226,7 @@ public class NewPatient extends javax.swing.JInternalFrame {
         d2month.setEnabled(false);
         jPanel1.add(d2month, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, 80, 30));
 
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/lightBlue.jpg"))); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lightBlue.jpg"))); // NOI18N
         jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 340));
 
@@ -236,7 +236,7 @@ public class NewPatient extends javax.swing.JInternalFrame {
         LBL.setForeground(new java.awt.Color(204, 0, 0));
         jPanel2.add(LBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 320, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/lightBlue.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lightBlue.jpg"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 901, 490));
 
