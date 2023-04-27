@@ -1,4 +1,4 @@
-## ProgrammingLapProject
+## Programming Lap Project
 ## COVID-19 Center
 
 ### Students:
