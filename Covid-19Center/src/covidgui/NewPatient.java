@@ -5,12 +5,10 @@
 package covidgui;
 
 import classes.Patient;
-import classes.Person;
 import classes.VaccinationData;
 import classes.database;
 import java.time.DateTimeException;
 import java.time.LocalDate;
-import java.time.Month;
 import javax.swing.JOptionPane;
 
 /**
@@ -39,7 +37,6 @@ public class NewPatient extends javax.swing.JInternalFrame {
         RDGroup = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         save1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -57,7 +54,7 @@ public class NewPatient extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         vcb = new javax.swing.JComboBox<>();
-        jButton3 = new javax.swing.JButton();
+        save2 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -74,6 +71,7 @@ public class NewPatient extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setPreferredSize(new java.awt.Dimension(910, 520));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setPreferredSize(new java.awt.Dimension(900, 510));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -81,20 +79,19 @@ public class NewPatient extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Georgia", 3, 30)); // NOI18N
         jLabel3.setText("New Patient");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 340, 50));
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
 
-        save1.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
+        save1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         save1.setText("Save");
         save1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 save1ActionPerformed(evt);
             }
         });
-        jPanel2.add(save1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, -1, -1));
+        jPanel2.add(save1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 90, 30));
 
         jLabel4.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
         jLabel4.setText("ID");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, -1, -1));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, -1, 30));
 
         jLabel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 900, 70));
@@ -107,30 +104,30 @@ public class NewPatient extends javax.swing.JInternalFrame {
                 RDFActionPerformed(evt);
             }
         });
-        jPanel2.add(RDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 210, -1, -1));
+        jPanel2.add(RDF, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, -1, -1));
 
-        CBM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", " " }));
+        CBM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "Decembe", " " }));
         CBM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CBMActionPerformed(evt);
             }
         });
-        jPanel2.add(CBM, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, 50, -1));
+        jPanel2.add(CBM, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, 80, 30));
 
         jLabel7.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
         jLabel7.setText("Gender");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, -1, 30));
 
         TFn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TFnActionPerformed(evt);
             }
         });
-        jPanel2.add(TFn, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 210, -1));
+        jPanel2.add(TFn, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 210, 30));
 
         jLabel9.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
         jLabel9.setText("Name");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, -1, 30));
 
         have.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
         have.setText("Have vaccine");
@@ -139,7 +136,7 @@ public class NewPatient extends javax.swing.JInternalFrame {
                 haveActionPerformed(evt);
             }
         });
-        jPanel2.add(have, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, 30));
+        jPanel2.add(have, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, 30));
 
         RDGroup.add(RDM);
         RDM.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
@@ -149,16 +146,16 @@ public class NewPatient extends javax.swing.JInternalFrame {
                 RDMActionPerformed(evt);
             }
         });
-        jPanel2.add(RDM, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, -1, -1));
+        jPanel2.add(RDM, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, -1, -1));
 
         CBD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", " " }));
-        jPanel2.add(CBD, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 60, -1));
+        jPanel2.add(CBD, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 50, 30));
 
         jLabel8.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
         jLabel8.setText("Date of birth");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, -1, -1));
-        jPanel2.add(TFY, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, 90, -1));
-        jPanel2.add(TFid, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 210, -1));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, 30));
+        jPanel2.add(TFY, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 60, 30));
+        jPanel2.add(TFid, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 210, 30));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -174,14 +171,15 @@ public class NewPatient extends javax.swing.JInternalFrame {
         });
         jPanel1.add(vcb, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 180, 30));
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton3.setText("Save");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        save2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        save2.setText("Save");
+        save2.setEnabled(false);
+        save2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                save2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 290, 80, 30));
+        jPanel1.add(save2, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 290, 80, 30));
 
         jLabel11.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
         jLabel11.setText("Date of second date:");
@@ -236,24 +234,13 @@ public class NewPatient extends javax.swing.JInternalFrame {
 
         LBL.setFont(new java.awt.Font("Georgia", 0, 14)); // NOI18N
         LBL.setForeground(new java.awt.Color(204, 0, 0));
-        jPanel2.add(LBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 320, 70));
+        jPanel2.add(LBL, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 320, 30));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/files/lightBlue.jpg"))); // NOI18N
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 901, 490));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 940, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 901, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -275,21 +262,21 @@ public class NewPatient extends javax.swing.JInternalFrame {
                 } else if (RDF.isSelected()) {
                     gender = "Female";
 
-                }//we can use another else if he didnt press on any gender then we show on LBL that he has to pick one
+                }
                 int d = Integer.parseInt(CBD.getSelectedItem().toString());
-                int m = Integer.parseInt(CBM.getSelectedItem().toString());
+                int m = CBM.getSelectedIndex() + 1;
                 int y = Integer.parseInt(TFY.getText());
                 LocalDate date = LocalDate.of(y, m, d);
 
-                Patient patient = new Patient(name, date, id, gender, null, 'N');
-//                    Person person = new Person(name, date, id, gender);
-//                    i will add paitent constructor and add rdb to check if he has vaccine or not 
-//                    if he has vaccine add vaccination data to the paitent 
-            }
+                new Patient(name, date, id, gender, null, 'N');
 
-            //maybe i should add date of birth into person class
+                clearNewP();
+                JOptionPane.showMessageDialog(rootPane, "Added successfully");
+            }
         } catch (DateTimeException dte) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Date");
+        } catch (NumberFormatException nfe){
+            JOptionPane.showMessageDialog(rootPane, "Please enter correct year");
         }
     }//GEN-LAST:event_save1ActionPerformed
 
@@ -322,6 +309,7 @@ public class NewPatient extends javax.swing.JInternalFrame {
         d1day.setEnabled(true);
         d1month.setEnabled(true);
         d1year.setEnabled(true);
+        save2.setEnabled(true);
         if (vcb.getSelectedIndex() == 2) {
             nodcb.addItem("1");
             jLabel12.setEnabled(true);
@@ -340,7 +328,7 @@ public class NewPatient extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_nodcbActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void save2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_save2ActionPerformed
         try {
             LocalDate vd1;
             LocalDate vd2;
@@ -367,17 +355,42 @@ public class NewPatient extends javax.swing.JInternalFrame {
 
                 }//we can use another else if he didnt press on any gender then we show on LBL that he has to pick one
                 int d = Integer.parseInt(CBD.getSelectedItem().toString());
-                int m = Integer.parseInt(CBM.getSelectedItem().toString());
+                int m = CBM.getSelectedIndex() + 1;
+                
                 int y = Integer.parseInt(TFY.getText());
                 LocalDate date = LocalDate.of(y, m, d);
 
-                Patient patient = new Patient(name, date, id, gender, vd, 'N');
+                new Patient(name, date, id, gender, vd, 'N');
+                
+                clearNewP();
+                vcb.setSelectedIndex(0);
+                nodcb.setSelectedIndex(0);
+                d1day.setSelectedIndex(0);
+                d1month.setSelectedIndex(0);
+                d1year.setText("");
+                d2day.setSelectedIndex(0);
+                d2month.setSelectedIndex(0);
+                d2year.setText("");
+                jPanel1.setVisible(false);
+                JOptionPane.showMessageDialog(rootPane, "Added successfully");
             }
         } catch (DateTimeException dte) {
             JOptionPane.showMessageDialog(rootPane, "Incorrect Date");
+        } catch (NumberFormatException nfe){
+            JOptionPane.showMessageDialog(rootPane, "Please enter correct year");
         }
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_save2ActionPerformed
 
+    private void clearNewP(){
+        TFn.setText("");
+        RDGroup.clearSelection();
+        CBM.setSelectedIndex(0);
+        CBD.setSelectedIndex(0);
+        TFY.setText("");
+        TFid.setText("");
+        have.setSelected(false);
+    }
+    
     private void initialize() {
         jPanel1.setVisible(false);
     }
@@ -399,7 +412,6 @@ public class NewPatient extends javax.swing.JInternalFrame {
     private javax.swing.JComboBox<String> d2month;
     private javax.swing.JTextField d2year;
     private javax.swing.JRadioButton have;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -409,7 +421,6 @@ public class NewPatient extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -417,6 +428,7 @@ public class NewPatient extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JComboBox<String> nodcb;
     private javax.swing.JButton save1;
+    private javax.swing.JButton save2;
     private javax.swing.JComboBox<String> vcb;
     // End of variables declaration//GEN-END:variables
 }
