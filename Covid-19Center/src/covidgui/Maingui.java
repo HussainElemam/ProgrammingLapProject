@@ -43,6 +43,11 @@ public class Maingui extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -54,7 +59,7 @@ public class Maingui extends javax.swing.JFrame {
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 70));
 
         b1.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
-        b1.setText("New Test");
+        b1.setText("New Patient");
         b1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 b1ActionPerformed(evt);
@@ -143,8 +148,8 @@ public class Maingui extends javax.swing.JFrame {
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
         mainDesktop.removeAll();
-        newTest nt = new newTest();
-        mainDesktop.add(nt).setVisible(true);
+        NewPatient np = new NewPatient();
+        mainDesktop.add(np).setVisible(true);
     }//GEN-LAST:event_b1ActionPerformed
 
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
@@ -170,6 +175,10 @@ public class Maingui extends javax.swing.JFrame {
         Vaccination ap = new Vaccination();
         mainDesktop.add(ap).setVisible(true);
     }//GEN-LAST:event_b4ActionPerformed
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        database.save();
+    }//GEN-LAST:event_formWindowClosing
 
     /**
      * @param args the command line arguments
